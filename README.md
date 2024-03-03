@@ -31,7 +31,7 @@ This web page allows you to generate Sileo depictions easily by providing input 
 
 ## Credits
 
-This Sileo Depiction Generator is created by [Your Name] and is inspired by the Sileo depiction format used in iOS jailbreaking community.
+This Sileo Depiction Generator is created by [TweaksDev22] and is inspired by the Sileo depiction format used in iOS jailbreaking community.
 
 ## License
 
