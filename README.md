@@ -11,10 +11,19 @@ This web page allows you to generate Sileo depictions easily by providing input 
 
 ## How to Use
 
-1. Fill in the required input fields with the necessary information for your Sileo depiction.
-2. Click on the "Generate and Upload JSON" button.
-3. The page will generate the JSON representation of the depiction based on your inputs and upload it to your GitHub repository.
-4. You will receive a notification confirming the successful creation of the depiction JSON file.
+1. **Set Up GitHub Access**: Ensure you have a GitHub personal access token with the necessary permissions. Replace `'YOUR_PERSONAL_ACCESS_TOKEN'` in the JavaScript code with your actual token.
+
+2. **Set Branch Name**: Replace `'main'` with your repository's main branch name in the JavaScript code.
+
+3. **Provide Background Image**: Set the background image URL in the CSS code to customize the appearance of the page.
+
+4. **Create a Folder on GitHub**: Create a folder named "sileo-depiction" in your GitHub repository to store the generated depiction JSON files.
+
+5. **Fill in the Form**: Fill in the required input fields with the necessary information for your Sileo depiction.
+
+6. **Generate and Upload JSON**: Click on the "Generate and Upload JSON" button.
+
+7. **Check GitHub**: Verify that the depiction JSON file has been successfully uploaded to the "sileo-depiction" folder in your GitHub repository.
 
 ## Technologies Used
 
@@ -31,7 +40,7 @@ This web page allows you to generate Sileo depictions easily by providing input 
 
 ## Credits
 
-This Sileo Depiction Generator is created by [TweaksDev22] and is inspired by the Sileo depiction format used in iOS jailbreaking community.
+This Sileo Depiction Generator is created by [Your Name] and is inspired by the Sileo depiction format used in the iOS jailbreaking community.
 
 ## License
 
