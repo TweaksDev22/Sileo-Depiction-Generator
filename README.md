@@ -13,6 +13,9 @@ This web page allows you to generate Sileo depictions easily by providing input 
 - Customizable input fields for header image URL, Discord URL, screenshot URL, description, version, author, section, downloads, iOS versions, folder name, and JSON file name
 - Automatically creates the JSON representation of the Sileo depiction
 - Uploads the generated JSON to your GitHub repository
+## Screenshot
+
+![Screenshot](https://tweaksdev22.github.io/Sileo-Depiction-Generator/img/project.jpg)
 
 ## How to Use
 
