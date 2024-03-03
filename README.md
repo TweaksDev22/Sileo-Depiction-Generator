@@ -1,4 +1,9 @@
 # Sileo Depiction Generator
+[![Profile Views](https://komarev.com/ghpvc/?username=YourUsername)](https://github.com/YourUsername)
+[![GitHub forks](https://img.shields.io/github/forks/YourUsername/YourRepository)](https://github.com/YourUsername/YourRepository)
+[![GitHub stars](https://img.shields.io/github/stars/YourUsername/YourRepository)](https://github.com/YourUsername/YourRepository)
+[![Discord](https://img.shields.io/badge/Discord-YourServer-blue?style=flat-square&logo=discord)](https://discord.gg/Q67N6VFXnJ)
+[![Download Count](https://img.shields.io/github/downloads/YourUsername/YourRepository/total)](https://github.com/YourUsername/YourRepository)
 
 This web page allows you to generate Sileo depictions easily by providing input values for various fields. It then creates a JSON representation of the depiction based on your inputs and uploads it to your GitHub repository.
 
@@ -40,7 +45,7 @@ This web page allows you to generate Sileo depictions easily by providing input 
 
 ## Credits
 
-This Sileo Depiction Generator is created by [Your Name] and is inspired by the Sileo depiction format used in the iOS jailbreaking community.
+This Sileo Depiction Generator is created by [TweaksDev22] and is inspired by the Sileo depiction format used in the iOS jailbreaking community.
 
 ## License
 
