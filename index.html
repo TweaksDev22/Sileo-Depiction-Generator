@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sileo Depiction Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://tweaksdev22.github.io/img/coming.webp');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        pre {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sileo Depiction Generator</h1>
+        <form id="depictionForm">
+            <label for="headerImage">Header Image URL:</label>
+            <input type="text" id="headerImage" name="headerImage" required>
+
+            <label for="discordUrl">Discord URL:</label>
+            <input type="text" id="discordUrl" name="discordUrl" required>
+
+            <label for="screenshotUrl">Screenshot URL:</label>
+            <input type="text" id="screenshotUrl" name="screenshotUrl" required>
+
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required>
+
+            <label for="version">Version:</label>
+            <input type="text" id="version" name="version" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required>
+
+            <label for="section">Section:</label>
+            <input type="text" id="section" name="section" required>
+
+            <label for="downloads">Downloads:</label>
+            <input type="text" id="downloads" name="downloads" required>
+
+            <label for="iosVersions">iOS Versions:</label>
+            <input type="text" id="iosVersions" name="iosVersions" required>
+
+            <label for="folderName">Folder Name:</label>
+            <input type="text" id="folderName" name="folderName" required>
+
+            <label for="jsonFileName">JSON File Name:</label>
+            <input type="text" id="jsonFileName" name="jsonFileName" value="depiction" required>
+
+            <button type="button" onclick="generateAndUpload()">Generate and Upload JSON</button>
+        </form>
+
+        <pre id="jsonOutput"></pre>
+    </div>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        async function generateAndUpload() {
+            // Collect input values from the form
+            const headerImage = document.getElementById('headerImage').value;
+            const discordUrl = document.getElementById('discordUrl').value;
+            const screenshotUrl = document.getElementById('screenshotUrl').value;
+            const description = document.getElementById('description').value;
+            const version = document.getElementById('version').value;
+            const author = document.getElementById('author').value;
+            const section = document.getElementById('section').value;
+            const downloads = document.getElementById('downloads').value;
+            const iosVersions = document.getElementById('iosVersions').value;
+            const folderName = document.getElementById('folderName').value;
+            const jsonFileName = document.getElementById('jsonFileName').value;
+
+            // Construct the JSON object
+            const depictionJSON = {
+                "class": "DepictionTabView",
+                "minVersion": "0.4",
+                "headerImage": headerImage,
+                "tabs": [
+                    {
+                        "class": "DepictionStackView",
+                        "tabname": "Details",
+                        "views": [
+                            {
+                                "class": "DepictionButtonView",
+                                "text": "Join Our Discord!",
+                                "action": discordUrl,
+                                "openExternal": true,
+                                "tintColor": "#7289da"
+                            },
+                            {
+                                "class": "DepictionSeparatorView"
+                            },
+                            {
+                                "class": "DepictionScreenshotsView",
+                                "itemCornerRadius": 6,
+                                "itemSize": "[160, 346]",
+                                "screenshots": [
+                                    {
+                                        "accessibilityText": "Screenshot",
+                                        "url": screenshotUrl
+                                    }
+                                ]
+                            },
+                            {
+                                "class": "DepictionHeaderView",
+                                "title": "Description"
+                            },
+                            {
+                                "class": "DepictionSeparatorView"
+                            },
+                            {
+                                "class": "DepictionMarkdownView",
+                                "markdown": description,
+                                "useSpacing": true
+                            },
+                            {
+                                "class": "DepictionHeaderView",
+                                "title": "Package Info"
+                            },
+                            {
+                                "class": "DepictionSeparatorView"
+                            },
+                            {
+                                "class": "DepictionTableTextView",
+                                "title": "Version",
+                                "text": version
+                            },
+                            {
+                                "class": "DepictionTableTextView",
+                                "title": "Author",
+                                "text": author
+                            },
+                            {
+                                "class": "DepictionTableTextView",
+                                "title": "Section",
+                                "text": section
+                            },
+                            {
+                                "class": "DepictionTableTextView",
+                                "title": "Downloads",
+                                "text": downloads
+                            },
+                            {
+                                "class": "DepictionTableTextView",
+                                "title": "iOS Versions",
+                                "text": iosVersions
+                            },
+                            {
+                                "class": "DepictionSeparatorView"
+                            },
+                            {
+                                "class": "DepictionSpacerView",
+                                "spacing": 10
+                            },
+                            {
+                                "class": "DepictionButtonView",
+                                "action": "https://tweaksdev22.github.io",
+                                "isLink": true,
+                                "yPadding": 4,
+                                "text": "TweaksDev22","view": {
+                                    "class": "DepictionImageView",
+                                    "URL": "https://raw.githubusercontent.com/TweaksDev22/tweaksdev22.github.io/master/img/tweaksdev22.png",
+                                    "width": 80,
+                                    "height": 80,
+                                    "cornerRadius": 1,
+                                    "alignment": 1,
+                                    "accessibilityText": "TweaksDev22"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "class": "DepictionStackView",
+                        "tabname": "Changelog",
+                        "views": [
+                            {
+                                "class": "DepictionMarkdownView",
+                                "markdown": "- Initial release!",
+                                "useSpacing": true
+                            },
+                            {
+                                "class": "DepictionSeparatorView"
+                            },
+                            {
+                                "class": "DepictionSpacerView",
+                                "spacing": 10
+                            },
+                            {
+                                "class": "DepictionButtonView",
+                                "action": "https://tweaksdev22.github.io",
+                                "isLink": true,
+                                "yPadding": 4,
+                                "text": "TweaksDev22",
+                                "view": {
+                                    "class": "DepictionImageView",
+                                    "URL": "https://raw.githubusercontent.com/TweaksDev22/tweaksdev22.github.io/master/img/tweaksdev22.png",
+                                    "width": 80,
+                                    "height": 80,
+                                    "cornerRadius": 1,
+                                    "alignment": 1,
+                                    "accessibilityText": "TweaksDev22"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            };
+
+            // Convert JSON to string
+            const jsonOutput = JSON.stringify(depictionJSON, null, 4);
+
+            // Display the generated JSON in a pre tag
+            document.getElementById('jsonOutput').innerText = jsonOutput;
+
+            // GitHub API endpoint to create or update a file
+            const apiUrl = `https://api.github.com/repos/TweaksDev22/tweaksdev22.github.io/contents/sileo-depiction/${folderName}/${jsonFileName}.json`;
+
+            // Personal access token generated from GitHub
+            const accessToken = 'YOUR_PERSONAL_ACCESS_TOKEN'; // Replace with your token
+
+            // Make a fetch request to GitHub API to create or update the file
+            const response = await fetch(apiUrl, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `token ${accessToken}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: 'Add depiction JSON',
+                    content: btoa(jsonOutput),
+                    branch: 'main' // Change to your branch name
+                })
+            });
+
+            // Handle the response from the API
+            if (response.ok) {
+                alert('Depiction JSON file created successfully!');
+            } else {
+                const responseData = await response.json();
+                alert(`Failed to create depiction JSON file. Error: ${responseData.message}`);
+            }
+        }
+    </script>
+</body>
+</html>
