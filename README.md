@@ -1,7 +1,7 @@
 # Sileo Depiction Generator
 [![Profile Views](https://komarev.com/ghpvc/?username=TweaksDev22)](https://github.com/TweaksDev22)
 [![GitHub forks](https://img.shields.io/github/forks/TweaksDev22/Sileo-Depiction-Generator)](https://github.com/TweaksDev22/Sileo-Depiction-Generator)
-[![GitHub stars](https://img.shields.io/github/stars/TweaksDev22/TweaksDev22/Sileo-Depiction-Generator)](https://github.com/TweaksDev22/TweaksDev22/Sileo-Depiction-Generator)
+[![GitHub stars](https://img.shields.io/github/stars/TweaksDev22/Sileo-Depiction-Generator)](https://github.com/TweaksDev22/Sileo-Depiction-Generator)
 [![Discord](https://img.shields.io/badge/Discord-TweaksDev22-blue?style=flat-square&logo=discord)](https://discord.gg/Q67N6VFXnJ)
 [![Download Count](https://img.shields.io/github/downloads/TweaksDev22/TweaksDev22/Sileo-Depiction-Generator/total)](https://github.com/TweaksDev22/TweaksDev22/Sileo-Depiction-Generator)
 
